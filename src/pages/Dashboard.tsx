@@ -112,40 +112,48 @@ const Dashboard = () => {
       {/* Main content */}
       <main className="flex-1 overflow-auto">
         <div className="p-6">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Add New Product</h1>
               <p className="text-gray-600">Upload your product photos for editing</p>
             </div>
             
-            <button className="btn-primary flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 5v14M5 12h14" />
-              </svg>
-              <span>Upgrade to Pro</span>
-            </button>
+            <div className="flex items-center gap-3">
+              <button className="btn-accent flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                <span>New Product</span>
+              </button>
+              <button className="btn-primary flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                <span>Upgrade to Pro</span>
+              </button>
+            </div>
           </div>
           
           {/* Upload area */}
           <div 
-            className="bg-white border-2 border-dashed border-gray-300 rounded-xl p-8 mb-8 flex flex-col items-center justify-center cursor-pointer hover:border-brand-purple transition-colors"
+            className="bg-white border-2 border-dashed border-gray-300 rounded-2xl p-10 mb-8 flex flex-col items-center justify-center cursor-pointer hover:border-brand-purple transition-colors"
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onClick={handleUpload}
           >
-            <div className="w-16 h-16 mb-4 bg-brand-lightpurple rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="w-20 h-20 mb-6 bg-brand-lightpurple rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="17 8 12 3 7 8" />
                 <line x1="12" y1="3" x2="12" y2="15" />
               </svg>
             </div>
             
-            <h3 className="text-lg font-medium mb-2">Start Uploading</h3>
-            <p className="text-gray-500 text-center max-w-md mb-4">Drag & drop anywhere to start uploading</p>
+            <h3 className="text-xl font-semibold mb-3">Start Uploading</h3>
+            <p className="text-gray-500 text-center max-w-md mb-6">Drag & drop anywhere to start uploading your photos or files</p>
             
             <button 
-              className="btn-primary" 
+              className="btn-primary px-8 py-3 text-lg" 
               disabled={uploading}
             >
               {uploading ? 'Uploading...' : 'Select Files'}
@@ -154,25 +162,38 @@ const Dashboard = () => {
           
           {/* Products list */}
           <div>
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold">My Products</h2>
-              <p className="text-sm text-gray-500">Monthly Product Limit (3/10)</p>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-xl font-bold">My Products</h2>
+              <div className="flex items-center gap-2">
+                <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="w-1/3 h-full bg-brand-purple rounded-full"></div>
+                </div>
+                <p className="text-sm text-gray-500">Monthly Product Limit (3/10)</p>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product) => (
-                <div key={product.id} className="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                <div key={product.id} className="bg-white rounded-2xl shadow-sm overflow-hidden card-hover">
                   <div className="aspect-square overflow-hidden">
                     <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                   </div>
                   
-                  <div className="p-4">
-                    <h3 className="font-medium mb-1">{product.name}</h3>
-                    <p className="text-sm text-gray-600">{product.category}</p>
+                  <div className="p-5">
+                    <h3 className="font-medium text-lg mb-2">{product.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4">{product.category}</p>
                     
-                    <div className="mt-4 flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                      <span className="text-xs font-medium text-gray-600">Men's Clothing</span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-brand-purple"></div>
+                        <span className="text-xs font-medium text-gray-600">Product</span>
+                      </div>
+                      
+                      <button className="text-brand-purple hover:text-brand-violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
