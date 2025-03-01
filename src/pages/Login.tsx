@@ -21,27 +21,26 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-6">
       <div className="max-w-md w-full">
-        <div className="flex justify-center mb-8 animate-fade-in-scale">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/assets/logo.svg" alt="Logo" className="w-8 h-8" />
-            <span className="text-xl font-semibold text-brand-darkblue">Pixel</span>
-          </Link>
-        </div>
-        
         <div className="bg-white rounded-2xl shadow-lg p-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          <h2 className="text-2xl font-bold text-center mb-6">
-            {isLogin ? 'Sign in to your account' : 'Create your account'}
+          <div className="flex justify-center mb-6">
+            <img src="/assets/logo.svg" alt="Logo" className="w-16 h-16" />
+          </div>
+          
+          <h2 className="text-xl font-medium text-center mb-6">
+            Sign in to your account
           </h2>
           
           <button 
             onClick={handleGoogleSignIn}
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 px-4 mb-4 font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-green-100 hover:bg-green-200 rounded-lg py-3 px-4 mb-6 font-medium text-gray-700 transition-colors"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.1711 8.36788H17.5V8.33329H10V11.6666H14.6422C13.8844 13.7285 12.0711 15.1666 10 15.1666C7.23883 15.1666 5.00003 12.9277 5.00003 10.1666C5.00003 7.40544 7.23883 5.16663 10 5.16663C11.2745 5.16663 12.4345 5.63117 13.3289 6.40213L15.7177 4.01329C14.1039 2.53117 12.1711 1.66663 10 1.66663C5.3978 1.66663 1.66669 5.39775 1.66669 9.99996C1.66669 14.6022 5.3978 18.3333 10 18.3333C14.6022 18.3333 18.3333 14.6022 18.3333 9.99996C18.3333 9.44438 18.2756 8.89771 18.1711 8.36788Z" fill="#FFC107"/>
-              <path d="M2.62744 6.12104L5.36611 8.12928C6.10955 6.29482 7.90049 5.16663 9.99996 5.16663C11.2745 5.16663 12.4344 5.63117 13.3289 6.40213L15.7177 4.01329C14.1039 2.53117 12.1711 1.66663 9.99996 1.66663C6.79494 1.66663 4.02327 3.47208 2.62744 6.12104Z" fill="#FF3D00"/>
-              <path d="M10 18.3333C12.1277 18.3333 14.0255 17.4976 15.6322 16.0643L13.0211 13.8428C12.1492 14.5171 11.0934 14.9448 10 14.9999C7.94015 14.9999 6.13359 13.5761 5.3681 11.5261L2.58525 13.6704C3.96468 16.3926 6.76692 18.3333 10 18.3333Z" fill="#4CAF50"/>
-              <path d="M18.1712 8.36794H17.5V8.33335H10V11.6667H14.6423C14.2847 12.6483 13.6589 13.4908 12.8523 14.1017L12.8545 14.1003L15.4655 16.3218C15.2683 16.5025 18.3333 14.1667 18.3333 10.0001C18.3333 9.44449 18.2757 8.89782 18.1712 8.36794Z" fill="#1976D2"/>
+            <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                <path fill="#4285F4" d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z"/>
+                <path fill="#34A853" d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z"/>
+                <path fill="#FBBC05" d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z"/>
+                <path fill="#EA4335" d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z"/>
+              </g>
             </svg>
             <span>Sign in with Google</span>
           </button>
@@ -61,16 +60,16 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="input-field"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-teal focus:border-brand-teal"
                 required
               />
             </div>
             
-            <div className="mb-4">
+            <div className="mb-6">
               <div className="flex justify-between items-center mb-1">
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                 {isLogin && (
-                  <a href="#" className="text-xs text-brand-purple hover:underline">
+                  <a href="#" className="text-xs text-gray-500 hover:text-brand-teal">
                     Password forgotten?
                   </a>
                 )}
@@ -80,29 +79,38 @@ const Login = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)} 
-                className="input-field"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-brand-teal focus:border-brand-teal"
                 required
               />
             </div>
             
             <button 
               type="submit" 
-              className="w-full bg-brand-teal text-brand-darkblue font-medium rounded-lg py-3 px-4 mb-4 hover:bg-brand-teallight transition-colors"
+              className="w-full bg-brand-teal hover:bg-brand-teallight text-gray-700 font-medium rounded-lg py-3 px-4 mb-4 transition-colors"
             >
-              {isLogin ? 'SIGN IN' : 'SIGN UP'}
+              SIGN IN
             </button>
           </form>
           
-          <p className="text-center text-sm text-gray-600 mt-4">
+          <p className="text-center text-sm text-gray-600 mt-6">
             {isLogin ? "Do not have an account yet? " : "Already have an account? "}
             <button 
               onClick={() => setIsLogin(!isLogin)} 
-              className="text-brand-purple font-medium hover:underline"
+              className="text-brand-teal font-medium hover:underline"
             >
               {isLogin ? 'Sign Up' : 'Sign In'}
             </button>
           </p>
         </div>
+      </div>
+
+      {/* Chat button */}
+      <div className="fixed bottom-6 right-6">
+        <button className="w-14 h-14 rounded-full bg-brand-darkblue text-white flex items-center justify-center shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
       </div>
     </div>
   );

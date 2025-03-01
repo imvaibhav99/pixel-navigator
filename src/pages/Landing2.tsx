@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 
 const Landing2 = () => {
   useEffect(() => {
@@ -10,100 +9,74 @@ const Landing2 = () => {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      <Navbar />
-      
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-16 md:pb-24 px-6 md:px-12">
+        <section className="pt-16 pb-16 px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
+              <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/30 to-brand-purple/20 rounded-full blur-3xl -z-10 opacity-70"></div>
                 
-                <div className="relative max-w-xs mx-auto">
+                <div className="relative max-w-sm mx-auto">
                   {/* Phone mockup */}
                   <div className="relative z-10">
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="0" y="0" width="320" height="640" rx="40" fill="#161C2C" />
-                      <rect x="10" y="10" width="300" height="620" rx="32" fill="white" />
-                    </svg>
-                    
-                    <div className="absolute top-0 left-0 right-0 flex justify-center">
-                      <div className="w-40 h-6 bg-black rounded-b-xl"></div>
-                    </div>
-                    
-                    <div className="relative z-20 pt-12 px-6 flex flex-col items-center">
-                      <img src="/assets/logo.svg" alt="Logo" className="w-20 h-20 mb-4" />
-                    </div>
+                    <img 
+                      src="public/lovable-uploads/45dec523-7ca6-41b7-a2fb-7fb3a66a09a1.png" 
+                      alt="Phone mockup" 
+                      className="w-full h-auto"
+                    />
                   </div>
                 </div>
                 
                 {/* Bottom navigation */}
-                <div className="bg-brand-purple rounded-full px-6 py-3 max-w-sm mx-auto mt-20 flex items-center justify-between animate-pulse-slow">
-                  <img src="/assets/logo.svg" alt="Logo" className="w-5 h-5 invert opacity-80" />
+                <div className="bg-brand-purple rounded-full px-6 py-3 max-w-sm mx-auto mt-10 flex items-center justify-between">
+                  <div className="text-white text-lg font-medium">p</div>
                   
                   <div className="flex space-x-6">
                     <span className="text-xs text-white opacity-80">Pricing</span>
-                    <span className="text-xs text-white opacity-80">Stack</span>
+                    <span className="text-xs text-white opacity-80">How it Works</span>
                     <span className="text-xs text-white opacity-80">Blog</span>
+                    <span className="text-xs text-white opacity-80">Contact</span>
+                    <span className="text-xs text-white opacity-80">Affiliates</span>
                   </div>
                   
                   <div className="flex space-x-4">
-                    <span className="text-xs text-white opacity-80">Log in</span>
-                    <span className="text-xs bg-white text-brand-purple px-2 py-1 rounded-full">Sign Up</span>
+                    <span className="text-xs text-white opacity-80">Log in/ <br />Sign up</span>
                   </div>
                 </div>
                 
-                <div className="bg-brand-teal rounded-full px-4 py-1 max-w-xs mx-auto mt-4 flex items-center justify-center">
-                  <button className="text-xs font-medium">Get Started</button>
+                <div className="flex justify-between max-w-sm mx-auto mt-4">
+                  <button className="bg-white text-gray-800 rounded-lg px-4 py-2 text-sm font-medium shadow-md">
+                    Book 1:1 demo
+                  </button>
+                  <button className="bg-gray-900 text-white rounded-lg px-4 py-2 text-sm font-medium shadow-md">
+                    Get Started
+                  </button>
                 </div>
               </div>
               
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   Ready When You Are
                 </h1>
                 
-                <p className="text-gray-700 text-lg mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <p className="text-gray-700 text-lg mb-8 max-w-lg">
                   Jump right in and start exploring. Whether you're here to create, manage, or discover, our app is ready to go whenever you are!
                 </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <Link to="/login" className="btn-primary text-center">
-                    SIGN IN / SIGN UP
-                  </Link>
-                  <Link to="/dashboard" className="btn-accent text-center">
-                    Get Started
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
       
-      <footer className="mt-20 py-8 bg-gray-50">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <img src="/assets/logo.svg" alt="Logo" className="w-6 h-6" />
-              <span className="text-lg font-semibold text-brand-darkblue">Pixel</span>
-            </div>
-            
-            <div className="flex items-center gap-8">
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Terms
-              </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Cookies
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Chat button */}
+      <div className="fixed bottom-6 right-6">
+        <button className="w-14 h-14 rounded-full bg-brand-darkblue text-white flex items-center justify-center shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };

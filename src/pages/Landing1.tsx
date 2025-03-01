@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 
 const Landing1 = () => {
   useEffect(() => {
@@ -9,79 +8,116 @@ const Landing1 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <div className="min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <header className="bg-transparent py-6">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <img 
+              src="/assets/logo.svg" 
+              alt="Logo" 
+              className="w-10 h-10"
+            />
+          </Link>
+          
+          <nav className="hidden md:flex items-center space-x-8">
+            {[
+              { name: 'Tools', path: '#tools' },
+              { name: 'Explore', path: '#explore' },
+              { name: 'Stock', path: '#stock' },
+              { name: 'Pricing', path: '#pricing' },
+              { name: 'Blog', path: '#blog' },
+              { name: 'Contact', path: '#contact' },
+            ].map((item) => (
+              <a 
+                key={item.name}
+                href={item.path}
+                className="text-gray-800 hover:text-brand-purple transition-colors font-medium"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+          
+          <div className="flex items-center space-x-4">
+            <Link 
+              to="/login" 
+              className="text-gray-800 hover:text-brand-purple transition-colors font-medium"
+            >
+              Login
+            </Link>
+            <Link 
+              to="/signup" 
+              className="border border-gray-800 rounded-full px-6 py-2 text-gray-800 hover:bg-gray-800 hover:text-white transition-colors font-medium"
+            >
+              Sign up
+            </Link>
+          </div>
+        </div>
+      </header>
       
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-16 md:pb-24 px-6 md:px-12">
+        <section className="pt-16 pb-20 px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <div className="inline-block px-4 py-1.5 mb-6 bg-brand-lightpurple rounded-full animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div>
+                <div className="inline-block px-4 py-1.5 mb-6 bg-brand-lightpurple rounded-full">
                   <p className="text-xs font-medium text-brand-purple uppercase tracking-wider">
                     DELIVER YOUR IDEAS FASTER
                   </p>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   Supercharge your productivity with 
                   <span className="text-brand-purple"> AI image tools</span>
                 </h1>
                 
-                <p className="text-gray-600 mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <p className="text-gray-600 mb-8 max-w-lg">
                   Say goodbye to tedious and time consuming photo editing tasks 
                   and embrace a high-productivity workflow with an AI assisted 
                   toolset.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <Link to="/landing2" className="btn-primary text-center">
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <Link to="/dashboard" className="bg-gray-900 text-white rounded-lg px-8 py-3 font-medium text-center">
                     TRY IT NOW
-                  </Link>
-                  <Link to="/dashboard" className="btn-secondary text-center">
-                    Learn more
                   </Link>
                 </div>
               </div>
               
-              <div className="order-1 lg:order-2 relative animate-fade-in-scale" style={{ animationDelay: '0.4s' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-teal/20 rounded-[40px] blur-3xl -z-10 opacity-70"></div>
-                <div className="bg-brand-lightpurple p-4 rounded-[40px] overflow-hidden relative">
+              <div className="relative">
+                <div className="relative rounded-full overflow-hidden border-8 border-white shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                    alt="Productivity" 
-                    className="rounded-[32px] w-full h-auto object-cover aspect-square md:aspect-[4/3]"
+                    src="public/lovable-uploads/37c6afea-3b58-48c0-b9fc-a16b30d92942.png" 
+                    alt="Woman with productivity tools" 
+                    className="w-full h-auto"
                   />
-                  
-                  {/* Floating elements */}
-                  <div className="absolute top-1/4 -left-6 w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center rotate-12 animate-float">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M12 8v8m-4-4h8" />
-                    </svg>
-                  </div>
-                  
-                  <div className="absolute top-2/3 -right-6 w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center -rotate-12 animate-float" style={{ animationDelay: '1s' }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M12 7v5l3 3" />
-                    </svg>
-                  </div>
-                  
-                  <div className="absolute bottom-1/4 -left-4 w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center rotate-45 animate-float" style={{ animationDelay: '0.5s' }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </div>
-                  
-                  <div className="absolute top-1/3 -right-4 w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center -rotate-12 animate-float" style={{ animationDelay: '1.5s' }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                    </svg>
-                  </div>
+                </div>
+                
+                {/* Floating elements */}
+                <div className="absolute top-1/4 -left-10 w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center rotate-12 animate-float">
+                  <img src="/assets/logo.svg" alt="Icon" className="w-8 h-8" />
+                </div>
+                
+                <div className="absolute bottom-1/4 -right-6 w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center -rotate-12 animate-float" style={{ animationDelay: '1s' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                
+                <div className="absolute top-1/3 -right-4 w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center -rotate-12 animate-float" style={{ animationDelay: '1.5s' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                </div>
+                
+                <div className="absolute bottom-1/4 -left-8 w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center rotate-45 animate-float" style={{ animationDelay: '0.5s' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="9" cy="9" r="2" />
+                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -89,28 +125,14 @@ const Landing1 = () => {
         </section>
       </main>
       
-      <footer className="mt-20 py-8 bg-gray-50">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <img src="/assets/logo.svg" alt="Logo" className="w-6 h-6" />
-              <span className="text-lg font-semibold text-brand-darkblue">Pixel</span>
-            </div>
-            
-            <div className="flex items-center gap-8">
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Terms
-              </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-brand-purple transition-colors">
-                Cookies
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Chat button */}
+      <div className="fixed bottom-6 right-6">
+        <button className="w-14 h-14 rounded-full bg-brand-darkblue text-white flex items-center justify-center shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };
