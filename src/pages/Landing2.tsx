@@ -15,43 +15,43 @@ const Landing2 = () => {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Left Column with Phone */}
-              <div className="relative flex justify-center">
+              <div className="relative flex justify-center h-[600px]">
                 {/* Gradient background circle */}
-                <div className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-r from-brand-teal/50 to-brand-purple/50 blur-xl"></div>
+                <div className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-r from-brand-teal/40 to-brand-purple/40 blur-xl"></div>
                 
                 {/* Phone image */}
-                <div className="relative z-10 w-[300px]">
+                <div className="relative z-10 w-[320px] top-4">
                   <img 
-                    src="public/lovable-uploads/0691091c-5685-44ea-8235-41dd176303be.png"
+                    src="/lovable-uploads/0691091c-5685-44ea-8235-41dd176303be.png"
                     alt="Phone mockup" 
                     className="w-full h-auto"
                   />
                 </div>
                 
                 {/* Navigation bar below phone */}
-                <div className="absolute bottom-[-70px] w-[80%] max-w-[500px]">
+                <div className="absolute bottom-20 w-[90%] max-w-[550px]">
                   <div className="bg-[#9b87f5] rounded-full px-5 py-3 flex items-center justify-between">
                     <div className="text-white text-xl font-medium">p</div>
                     
                     <div className="hidden md:flex space-x-6">
-                      <span className="text-xs text-white">Pricing</span>
-                      <span className="text-xs text-white">How it Works</span>
-                      <span className="text-xs text-white">Blog</span>
-                      <span className="text-xs text-white">Contact</span>
-                      <span className="text-xs text-white">Affiliates</span>
+                      <span className="text-xs text-white font-medium">Pricing</span>
+                      <span className="text-xs text-white font-medium">How it Works</span>
+                      <span className="text-xs text-white font-medium">Blog</span>
+                      <span className="text-xs text-white font-medium">Contact</span>
+                      <span className="text-xs text-white font-medium">Affiliates</span>
                     </div>
                     
-                    <div className="text-xs text-white">
+                    <div className="text-xs text-white font-medium">
                       Log in/<br />Sign up
                     </div>
                   </div>
                   
                   {/* Buttons below navigation */}
                   <div className="flex justify-center mt-6 space-x-4">
-                    <button className="bg-white text-gray-800 border border-gray-200 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                    <button className="bg-white text-gray-700 border border-gray-200 rounded-full px-6 py-2.5 text-sm font-medium shadow-sm">
                       Book 1:1 demo
                     </button>
-                    <button className="bg-gray-900 text-white rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                    <button className="bg-[#1A1F2C] text-white rounded-full px-6 py-2.5 text-sm font-medium shadow-sm">
                       Get Started
                     </button>
                   </div>
@@ -59,17 +59,17 @@ const Landing2 = () => {
               </div>
               
               {/* Right Column with Text */}
-              <div className="mt-32 lg:mt-0 text-left lg:pr-12">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900">
-                  Ready When You Are
+              <div className="mt-20 lg:mt-0 text-left lg:pr-12">
+                <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#1A1F2C]">
+                  Ready When <br className="hidden md:block" />You Are
                 </h1>
                 
-                <p className="text-lg text-gray-700 mb-8 max-w-lg">
+                <p className="text-lg text-gray-700 mb-10 max-w-lg">
                   Jump right in and start exploring. Whether you're here to create, manage, or discover, our app is ready to go whenever you are!
                 </p>
                 
                 <div className="hidden lg:flex flex-col sm:flex-row gap-4">
-                  <Link to="/dashboard" className="bg-gray-900 text-white rounded-lg px-8 py-3 font-medium text-center w-full sm:w-auto">
+                  <Link to="/dashboard" className="bg-[#1A1F2C] text-white rounded-lg px-8 py-3 font-medium text-center w-full sm:w-auto">
                     GET STARTED
                   </Link>
                   <Link to="/" className="border border-gray-300 text-gray-700 rounded-lg px-8 py-3 font-medium text-center w-full sm:w-auto">
